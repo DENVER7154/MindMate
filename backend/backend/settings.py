@@ -8,14 +8,11 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# ← CHANGED: reads from environment variable instead of hardcoded
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure--!v*dx_+!$2%l0+*iq4dl-5l(=9wh_wsl8_5&nv$0sjrgffyz!')
 
-# ← CHANGED: reads from environment variable, defaults to False
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-# ← CHANGED: allows Render URLs
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.onrender.com', 'mindmate-backend-4ou2.onrender.com']
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -101,7 +98,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',                        # local dev
-    'https://your-frontend-name.onrender.com',     # update this later
+    'http://localhost:5173',
+    # we'll add the frontend URL here next
 ]
 CORS_ALLOW_CREDENTIALS = True  
