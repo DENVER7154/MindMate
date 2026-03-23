@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Mono:wght@300;400&family=Lora:wght@400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f7f4ef;
+  --surface: #ffffff;
+  --border: #e4dfd7;
+  --text: #1c1917;
+  --text-muted: #8a8078;
+  --accent: #1c1917;
+}
+
+body {
+  background: var(--bg);
+  font-family: 'Lora', Georgia, serif;
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 380px;
+  padding: 52px 44px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+  animation: fadeUp 0.4s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.form-container h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.form-input {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.82rem;
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  outline: none;
+  letter-spacing: 0.02em;
+  transition: border-color 0.2s;
+}
+.form-input::placeholder { color: #c8c2ba; }
+.form-input:focus { border-bottom-color: var(--text); }
+
+.form-button {
+  margin-top: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.73rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.form-button:hover { opacity: 0.82; }
+
+.form-error {
+  font-family: "DM Mono", monospace;
+  font-size: 0.7rem;
+  color: #b5192c;
+  background: #fff0f1;
+  border: 1px solid #f5c2c7;
+  border-radius: 2px;
+  padding: 10px 14px;
+  letter-spacing: 0.01em;
+  animation: fadeUp 0.2s ease both;
+}
