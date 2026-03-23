@@ -99,6 +99,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
-    # we'll add the frontend URL here next
+    'https://mindmate-frontend-4c5y.onrender.com',  
 ]
 CORS_ALLOW_CREDENTIALS = True  
